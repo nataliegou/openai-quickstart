@@ -24,10 +24,7 @@ def loadData():
     docs = text_splitter.create_documents([real_estate_sales])
     db = FAISS.from_documents(
         docs,
-        OpenAIEmbeddings(
-            api_key="sk-KaIk9bm6XvwtLd1TC877C8Cd78E3423cA4F4EfAe8b3f88C3",
-            base_url="https://api.xiaoai.plus/v1"
-        )
+        OpenAIEmbeddings()
     )
     db.save_local("real_estates_sale")
 
